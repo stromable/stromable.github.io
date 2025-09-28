@@ -6,15 +6,19 @@ const moonIcon = document.getElementById("moon-icon");
 if (localStorage.getItem("theme") === "dark" ||
     (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
     document.documentElement.classList.add("dark");
+    document.getElementById("logo").src = "assets/logo-light.png";
 } else {
     document.documentElement.classList.remove("dark");
+    document.getElementById("logo").src = "assets/logo-dark.png";
 }
 updateIcons();
 
 // Toggle theme
 themeToggle.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    document.getElementById("logo").src = isDark ? "assets/logo-dark.png" : "assets/logo-light.png";
     updateIcons();
 });
 
