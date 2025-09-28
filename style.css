@@ -1,4 +1,7 @@
 html { scroll-behavior: smooth; }
+body, html {
+  overflow-x: hidden;
+}
 
 /* Hover on service cards */
 .service-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
