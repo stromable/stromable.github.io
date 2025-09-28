@@ -1,83 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stromable | Next-Gen Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Stromable - Enterprise Technology & Product Engineering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Stromable Logo" />
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <!-- Dark/Light toggle -->
-      <div class="theme-switch-wrapper">
-        <label class="theme-switch">
-          <input type="checkbox" id="theme-toggle">
-          <span class="slider"></span>
-        </label>
-        <span class="toggle-icon" id="theme-icon">☀️</span>
-      </div>
-    </nav>
-  </header>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Building Next-Generation Enterprise Solutions</h1>
-    <p>Web • Mobile • AI — crafted for scale, performance, and innovation.</p>
-    <a href="#contact" class="btn">Get in Touch</a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>
-      Stromable is a technology startup specializing in enterprise-grade web, mobile, 
-      and AI applications. We help businesses innovate, scale, and stay ahead.
-    </p>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Web Apps</h3>
-        <p>Robust, scalable, and secure enterprise web applications.</p>
+  <!-- HEADER -->
+  <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+      <!-- Brand -->
+      <div class="flex items-center space-x-3">
+        <img src="assets/logo.png" alt="Stromable logo" class="h-12 w-12 object-contain">
+        <div>
+          <h1 class="text-xl font-bold">Stromable</h1>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Enterprise Technology & Product Engineering</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Mobile Apps</h3>
-        <p>Cross-platform mobile apps designed for performance and UX.</p>
-      </div>
-      <div class="card">
-        <h3>AI Solutions</h3>
-        <p>Intelligent automation and data-driven decision-making.</p>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="flex space-x-6 font-medium text-gray-700 dark:text-gray-300">
+          <li><a href="#home" class="hover:text-blue-500 nav-link">Home</a></li>
+          <li><a href="#services" class="hover:text-blue-500 nav-link">Services</a></li>
+          <li><a href="#about" class="hover:text-blue-500 nav-link">About</a></li>
+          <li><a href="#tech" class="hover:text-blue-500 nav-link">Tech</a></li>
+          <li><a href="#contact" class="hover:text-blue-500 nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Controls -->
+      <div class="flex items-center space-x-4">
+        <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Get in Touch</a>
+        <!-- Theme toggle -->
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+          <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M12 4.5V2m0 20v-2.5m7.5-7.5H22M2 12h2.5m15.364-7.364l1.768-1.768M4.636 19.364l1.768-1.768m0-12.728L4.636 4.636m15.364 15.364l-1.768-1.768M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg id="moon-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <main class="pt-24">
 
-  <!-- Footer -->
-  <footer>
-    <p>© <span id="year"></span> Stromable. All rights reserved.</p>
+    <!-- HERO -->
+    <section id="home" class="container mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-teal-500 font-semibold mb-2">We build reliable digital platforms</h2>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Enterprise applications, mobile apps and AI systems — engineered for scale.</h1>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">From ERP, HRM & CRM to mobile, AI/chatbots, e-commerce, and bespoke software — we design, develop and run production systems using modern microservices, container orchestration and robust data platforms.</p>
+        <div class="flex gap-4 mb-6">
+          <a href="#services" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Our Services</a>
+          <a href="#about" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">Who We Are</a>
+        </div>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 list-disc list-inside">
+          <li>Production-ready microservices & CI/CD</li>
+          <li>Cross-platform mobile (Android & iOS)</li>
+          <li>AI & automation for real business outcomes</li>
+        </ul>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="relative w-full h-80 md:h-96">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-tr from-teal-400 via-blue-400 to-indigo-500 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+        <div class="absolute bottom-0 -right-10 w-48 h-48 bg-gradient-to-tr from-pink-400 via-red-400 to-yellow-400 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-1/4 left-1/2 w-32 h-32 bg-gradient-to-tr from-green-400 via-lime-400 to-yellow-300 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-center mb-4">Services</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-12">End-to-end product and platform engineering across industries.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">⚙️</div>
+          <h3 class="font-semibold mb-2">Custom ERP</h3>
+          <p class="text-gray-600 dark:text-gray-300">Complex business processes implemented as configurable enterprise systems for finance, supply-chain, inventory and operations.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🧾</div>
+          <h3 class="font-semibold mb-2">HRM Solutions</h3>
+          <p class="text-gray-600 dark:text-gray-300">Modern HRM for payroll, attendance, onboarding and performance — tailored for your culture and scale.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🤝</div>
+          <h3 class="font-semibold mb-2">CRM & Sales Platforms</h3>
+          <p class="text-gray-600 dark:text-gray-300">Customer lifecycle management, sales automation, and reporting to increase revenue and retention.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">📱</div>
+          <h3 class="font-semibold mb-2">Mobile (Android & iOS)</h3>
+          <p class="text-gray-600 dark:text-gray-300">Native and cross-platform mobile development with performance, security and delightful UX.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🤖</div>
+          <h3 class="font-semibold mb-2">AI & Chatbots</h3>
+          <p class="text-gray-600 dark:text-gray-300">Conversational assistants, recommendation engines and automation systems using modern ML tooling.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🛒</div>
+          <h3 class="font-semibold mb-2">E-commerce Platforms</h3>
+          <p class="text-gray-600 dark:text-gray-300">Scalable storefronts and marketplaces with payment, inventory sync, and analytics.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🧩</div>
+          <h3 class="font-semibold mb-2">On-demand Custom Software</h3>
+          <p class="text-gray-600 dark:text-gray-300">Domain-driven solutions built to integrate, adapt and grow with your business needs.</p>
+        </article>
+        <article class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div class="text-3xl mb-2">🚀</div>
+          <h3 class="font-semibold mb-2">DevOps & Cloud Native</h3>
+          <p class="text-gray-600 dark:text-gray-300">Docker, Kubernetes, CI/CD pipelines, monitoring, SRE and cost-aware cloud operations.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container mx-auto px-6 py-20 bg-gray-50 dark:bg-gray-800">
+      <h2 class="text-3xl font-bold text-center mb-4">About Stromable</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-12">We combine engineering discipline with product sensibility.</p>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="font-semibold text-xl mb-2">Our story</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Founded by engineers and product builders, Stromable helps enterprises modernize and ship reliable software. We focus on measurable outcomes — reducing time-to-market, improving reliability, and delivering ROI through automation and sound architecture.</p>
+          <h4 class="font-semibold mb-1">Vision</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">To be a trusted engineering partner for companies transforming digitally and adopting modern platform architectures.</p>
+          <h4 class="font-semibold mb-1">Mission</h4>
+          <p class="text-gray-600 dark:text-gray-300">Deliver secure, maintainable, and scalable software using best-of-breed technologies and pragmatic engineering practices.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow">
+            <p class="text-xl font-bold">• Microservices-first design</p>
+          </div>
+          <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow">
+            <p class="text-xl font-bold">• Cloud-native CI/CD</p>
+          </div>
+          <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow">
+            <p class="text-xl font-bold">• Data-driven decisions</p>
+          </div>
+          <div class="p-4 bg-white dark:bg-gray-700 rounded-lg shadow">
+            <h4 class="font-semibold mb-2">Core Expertise</h4>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300">
+              <li>Scalable backend systems</li>
+              <li>Secure APIs & identity</li>
+              <li>Observability & SLOs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="tech" class="container mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-center mb-4">Technology Stack</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-12">We ship using proven stacks for reliability and rapid iteration.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">.NET</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">Python</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">React</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">MongoDB</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">MySQL</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">Docker</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">Kubernetes</span>
+        <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full">Microservices</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container mx-auto px-6 py-20 bg-gray-50 dark:bg-gray-800">
+      <h2 class="text-3xl font-bold text-center mb-4">Contact</h2>
+      <p class="text-center text-gray-500 dark:text-gray-400 mb-12">Let's discuss your project, requirements, or partnership.</p>
+      <div class="grid md:grid-cols-2 gap-12">
+        <form id="contact-form" class="space-y-4 bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+          <input id="name" name="name" type="text" placeholder="Your name" class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" required>
+          <input id="email" name="email" type="email" placeholder="Email address" class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800" required>
+          <textarea id="message" name="message" rows="6" placeholder="Brief description of your needs" class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800"></textarea>
+          <div class="flex gap-4">
+            <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Send message</button>
+            <button type="button" id="resetBtn" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">Reset</button>
+          </div>
+          <p id="form-status" class="text-gray-500 dark:text-gray-300 text-sm"></p>
+        </form>
+        <div class="space-y-6">
+          <div>
+            <h4 class="font-semibold mb-1">Head Office</h4>
+            <p>Dhaka, Bangladesh</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">We work remote-first and travel for customers.</p>
+          </div>
+          <div>
+            <iframe title="Stromable location"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=90.35156%2C23.69781%2C90.42310%2C23.75245&amp;layer=mapnik"
+              class="w-full h-56 border-0 rounded-lg"></iframe>
+            <small><a href="https://www.openstreetmap.org" class="text-blue-600 dark:text-blue-400">OpenStreetMap</a></small>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">GitHub</a>
+            <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">LinkedIn</a>
+            <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-500">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-100 dark:bg-gray-900 py-6 mt-12">
+    <div class="max-w-7xl mx-auto flex justify-between px-6 text-sm text-gray-500 dark:text-gray-400">
+      <div>© <span id="year"></span> Stromable — All rights reserved.</div>
+      <div>Built with craft, focus & observability.</div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
